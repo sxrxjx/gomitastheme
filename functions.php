@@ -14,7 +14,8 @@ add_action( 'wp_enqueue_scripts', 'gomita_style' );
 function mis_menus(){
     register_nav_menus(array(
         'menu-principal'=>__('Menu Principal', 'gomitatheme'),
-        'menu-secundario'=>__('Menu Secundario', 'gomitatheme')
+        'menu-secundario'=>__('Menu Secundario', 'gomitatheme'),
+        'menu-escondido'=>__('Menu Escondido', 'gomitatheme')
     ));
 
 }
