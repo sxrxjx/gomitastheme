@@ -1,0 +1,145 @@
+/* 
+Theme Name: Gomita Theme
+Theme URI: https://www.sxrxjx.es/
+Author: Sara Jiménez
+Author URI: https://www.sxrxjx.es/
+Description: Tema personalizado para Gomita Studio. Responsive y moderno.
+Version: 1.0
+*/
+:root{
+    --primary-font:"Rubik Bubbles",system-ui;
+    --secondary-font:"Zalando Sans Expanded", sans-serif;
+    --primary-color:tomato;
+    --secondary-color:white;
+    --primary-darker:rgb(173, 56, 35);
+    --secondary-darker:rgb(255, 197, 197);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+
+a{
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color:var(--primary-color);
+    &:hover{
+        color:var(--primary-darker);
+        
+    }
+}
+
+
+body{
+    font-family: var(--secondary-font);
+    background-color: var(--secondary-color);
+}
+
+header#header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .logo{
+        a{
+            img{
+                width: 100px;
+                padding:10px;
+            }
+        }
+    }
+    .menu-responsive{
+        display:none;
+    }
+    .menu-principal{
+        display:block;
+        ul{
+            display: flex;
+            gap: 20px; 
+            a:hover{
+                border-bottom: solid 2px var(--primary-darker);
+            }
+        }
+    }
+
+    @media (max-width:768px){
+        .menu-responsive{
+            color:var(--primary-color);
+            border: none;
+            background-color: transparent;
+            scale: 2;
+            margin:0 20px;
+            display: block;
+        }
+        .menu-principal{
+            position:absolute;
+            top:145px;
+            left:0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            display: none;
+        }
+        .menu-principal.active{
+            display:block;
+        }
+        .menu-principal ul{
+            text-align: right;
+            flex-direction: column;
+            margin:0 30px;
+            gap:20px;
+            a{
+                font-size: 1.5rem;
+                display:block;
+                border-bottom:solid 2px var(--primary-color);
+            }
+        }
+
+    }
+
+}
+
+
+footer#footer{
+    width: 100%;
+    padding:30px 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-color);
+    justify-content: space-around;
+    align-items: center;
+    a{
+        color:var(--secondary-color);
+        font-family: var(--secondary-font);
+        font-size: 0.75rem;
+        &:hover{
+            color:var(--secondary-darker);
+        }
+    }
+    .social{
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+     @media (max-width:768px){
+        .social{
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            gap:20px;
+            width: 20%;
+        }
+    }
+    
+    
+}
