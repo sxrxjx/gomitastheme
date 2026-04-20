@@ -9,7 +9,7 @@ Version: 1.0
 :root{
     --primary-font:"Rubik Bubbles",system-ui;
     --secondary-font:"Zalando Sans Expanded", sans-serif;
-    --primary-color:tomato;
+    --primary-color:rgb(255, 60, 0);
     --secondary-color:white;
     --primary-darker:rgb(173, 56, 35);
     --secondary-darker:rgb(255, 197, 197);
@@ -52,9 +52,15 @@ header#header{
 
     .logo{
         a{
-            img{
+            svg{
                 width: 100px;
                 padding:10px;
+                fill:var(--primary-color) !important;
+            }
+            &:hover{
+                svg{
+                    fill:var(--primary-darker);
+                }
             }
         }
     }
@@ -66,6 +72,40 @@ header#header{
         ul{
             display: flex;
             gap: 20px; 
+            li{
+                display: flex;
+                align-items: center;
+                a{
+
+                }
+            }
+            li:last-child{
+                a{
+                    background-color: var(--primary-color);
+                    color: var(--secondary-color);
+                    border: solid 2px var(--primary-color);
+                    border-radius: 100%;
+                    padding: 3px 15px;
+                    font-family: var(--primary-font);
+                    
+                    cursor: pointer;
+
+                    transform: rotate(5deg);
+                    display: inline-block;
+                    transition: transform 0.2s ease;
+
+                    &:hover{
+                        background-color: transparent;
+                        border: solid 2px var(--primary-color);
+                        color: var(--primary-color);
+                        transform: rotate(0deg) scale(1.05);
+
+                    } 
+
+                    
+                }
+            }
+
             a:hover{
                 border-bottom: solid 2px var(--primary-darker);
             }
@@ -106,6 +146,58 @@ header#header{
 
     }
 
+}
+main#main-category{
+    .categorias{
+        margin:50px 0;
+        .card{
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+            .card-body{
+                display:flex;
+                flex-direction: column;
+                p{
+                    font-size: 0.8rem;
+                    font-weight: normal;
+                    margin-bottom: 0;
+                }
+            }
+            
+            .btn-primary{
+                width: fit-content;
+                margin-left: auto;
+                margin-top: 5px;
+                background-color: var(--primary-color);
+                color: var(--secondary-color);
+                border: solid 2px var(--primary-color);
+                border-radius: 100%;
+                padding: 10px 20px;
+                font-family: var(--primary-font);
+                font-size: 1.2rem;
+                cursor: pointer;
+                transform: rotate(5deg);
+                    display: inline-block;
+                    transition: transform 0.2s ease;
+                &:hover{
+                    background-color: transparent;
+                    border: solid 2px var(--primary-color);
+                    color: var(--primary-color);
+                    transform: rotate(0deg) scale(1.05);
+
+                }
+            }
+            &:hover{
+                transform: translateY(-5px);
+                transition: all 0.3s ease;
+            }
+        }
+        
+    }
+}
+
+main#main-post{
+    
 }
 
 

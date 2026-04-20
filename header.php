@@ -15,8 +15,16 @@
 <body>
     <header id="header">
         <div class="logo">
-            <a href="<?php echo esc_url(home_url());?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo">
+            <a href="<?php echo esc_url(home_url());?>" class="logo-link">
+
+                <?php
+                    $svg = get_template_directory() . '/img/logo.svg';
+
+                    if (file_exists($svg)) {
+                        echo file_get_contents($svg);
+                    }
+                ?>
+
             </a>
         </div>
         <button class="menu-responsive" aria-expanded="false" aria-controls="primary-menu">
