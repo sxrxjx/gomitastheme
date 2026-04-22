@@ -68,3 +68,30 @@ function wpdocs_excerpt_more( $more ) {
 	return $more;
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function mis_widgets(){
+    register_sidebar(
+        array(
+            'name' => __('Redes', 'gomitastheme'),
+            'id' => 'footer-1',
+            'description' => __('Widgets para el pie de página.', 'gomitastheme'),
+            'before__widget' => '<div id="%1$s" class="widget %2$4">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => __('Pie de Página', 'gomitastheme'),
+            'id' => 'footer-2',
+            'description' => __('Widgets para el pie de página.', 'gomitastheme'),
+            'before__widget' => '<div id="%1$s" class="widget %2$4">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        )
+    );
+}
+
+add_action('widgets_init','mis_widgets');
